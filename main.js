@@ -71,49 +71,14 @@ function question4 () {
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:
-  let eightMaterialsStuff = [];
-  let eightMaterialsTitle = [];
-
   for (let i = 0; i < data.length; i++) {
-    for (let k = 0; k < data[i].materials.length; k++) {
-      if (data[i].materials.length >= 8) {
-        eightMaterialsStuff.push(data[i].materials[k])
+    if (data[i].materials.length >= 8) {
+      console.log(data[i].title + " has " + data[i].materials.length + " materials.");
+      for (let j = 0; j < data[i].materials.length; j++) {
+        console.log("- " + data[i].materials[j]);
       }
     }
   }
-
-  for (let j = 0; j < data.length; j++) {
-    for (let k = 0; k < data[j].title.length; k++) {
-      if (data[j].materials.length >= 8) {
-        eightMaterialsTitle.push(data[j].title[k])
-      }
-    }
-  }
-
-  for (let k = 0; k < eightMaterialsStuff.length; k++) {
-    console.log(eightMaterialsTitle);
-    break; 
-    console.log(eightMaterialsStuff);
-  }
-}
-
-  // for (let i = 0; i < data.length; i++) {
-  //   if (data[i].materials.length >= 8) {
-  //     console.log(data[i].title)
-  //     // console.log(data[i].title + " has " + materials.length + ":")
-  //   }
-  // }
-  //
-  //   for (let i = 0; i < eightMaterials.length; i++) {
-  //     // for (let j = 0; j < data.length; j++) {
-  //     //   if (data[j].materials.length >= 8) {
-  //     //     console.log(data[j].title)
-  //         console.log(data[i].title + " has " + data[i].materials.length + ":")
-  //       }
-  //     }
-  //
-  //     console.log("- " + eightMaterials[i])
-  //   }
   }
 
 
@@ -124,7 +89,7 @@ function question6 () {
   // Answer:
   let totalHandmade = [];
 
-  for (i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (data[i].who_made === "i_did") {
       totalHandmade.push(data[i].title)
     }
@@ -132,9 +97,4 @@ function question6 () {
 
   console.log(totalHandmade.length + " items were made by their sellers.")
 
-
-  // for all items under data
-  // if who_made is i_did,
-  // then add all those objects to an array
-  // and then find the length of that array
 }
